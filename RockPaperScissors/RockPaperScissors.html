@@ -3,7 +3,49 @@
 <body>
     This is my first web page ever...
 	<script>
+	function playRound(playerSelection, computerSelection) {
+	// your code here!
+	playerSelection = playerSelection.toLowerCase()
+	if (playerSelection == computerSelection) {
+	return 'Nothing happens mate'
+	}
+	if (computerSelection == 'paper'){
+	return computerSelection + ' beats '+ playerSelection + '. Loser!'
+	}
+	if (computerSelection == 'scissors'){
+	return computerSelection + ' is  beaten by '+ playerSelection+ ' you win'
+	}
+}	
 	
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+  }
+	function computerPlay() {
+	
+	const myRandomNumber = getRndInteger(1,4)
+	console.log(myRandomNumber)
+	let myHand = 'Ha ha'
+	switch ( myRandomNumber ) {
+	case 1:
+		myHand = 'rock';
+		break;
+	case 2:
+		myHand = 'paper';
+		break;
+	case 3:
+		myHand = 'scissors';
+		break;
+	
+	}
+	return myHand
+	}
+	
+
+let computerSelection = computerPlay()
+let playerSelection = prompt()
+console.log(playRound(playerSelection, computerSelection))
+
 	</script>
 	
 </body>
